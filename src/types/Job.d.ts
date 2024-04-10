@@ -1,4 +1,4 @@
-export type Job = {
+export type JobType = {
   id: string
   title: string
   type: string
@@ -8,5 +8,5 @@ export type Job = {
 }
 
 export type JobListingProps = {
-  job: Job
+  job: JobType
 }

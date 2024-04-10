@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { JobListingProps } from "../types/Job"
 import { FaMapMarked } from 'react-icons/fa'
+import { Link } from "react-router-dom";
 const JobListing = ({ job }: JobListingProps) => {
   const [showAllDescription, setShowAllDescription] = useState(false);
   let description = job.description;
@@ -33,12 +34,12 @@ const JobListing = ({ job }: JobListingProps) => {
             <FaMapMarked className="inline mb-1 mr-1" />
             {job.location}
           </div>
-          <a
-            href={`/job.html/${job.id}`}
+          <Link
+            to={`/job/${job.id}`}
             className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>
