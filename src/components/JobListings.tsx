@@ -9,8 +9,8 @@ const JobListings = ({ isHome = false }) => {
   const [loading, setLoading] = useState(true);
 
   const apiUrl = isHome
-    ? '/api/jobs?_limit=3'
-    : '/api/jobs';
+    ? 'https://json-server-vercel-xi-puce.vercel.app/api/jobs?_limit=3'
+    : 'https://json-server-vercel-xi-puce.vercel.app/api/jobs';
 
 
   useEffect(() => {

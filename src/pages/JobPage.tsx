@@ -106,7 +106,7 @@ const jobPage = ({ deleteJob }: { deleteJob: Function }) => {
 }
 
 const jobLoader = async ({ params }:LoaderFunctionArgs): Promise<JobType> => {
-  const response = await fetch(`/api/jobs/${params.id}`)
+  const response = await fetch(`https://json-server-vercel-xi-puce.vercel.app/api/jobs/${params.id}`)
   const data = await response.json()
   return data
 }

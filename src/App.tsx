@@ -12,7 +12,7 @@ import { JobType } from './types/Job'
 const App = () => {
 
   const addJob = async (job: JobType) => {
-    await fetch(`/api/jobs`, {
+    await fetch(`https://json-server-vercel-xi-puce.vercel.app/api/jobs`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ const App = () => {
     return;
   }
   const deleteJob = async (id:string) => {
-    await fetch(`/api/jobs/${id}`, {
+    await fetch(`https://json-server-vercel-xi-puce.vercel.app/api/jobs/${id}`, {
       method: 'DELETE'
     })
   }
