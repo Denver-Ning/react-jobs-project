@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useNavigate } from 'react-router-dom'
+import { Link, useLoaderData, useNavigate,LoaderFunctionArgs } from 'react-router-dom'
 import { JobType } from '../types/Job'
 import { FaMapMarker } from 'react-icons/fa'
 import { toast } from 'react-toastify'
@@ -104,7 +104,8 @@ const jobPage = ({ deleteJob }: { deleteJob: Function }) => {
     </>
   )
 }
-const jobLoader = async ({ params }) => {
+
+const jobLoader = async ({ params }:LoaderFunctionArgs): Promise<JobType> => {
   const response = await fetch(`/api/jobs/${params.id}`)
   const data = await response.json()
   return data
