@@ -97,20 +97,6 @@
         "contactEmail": "22@qq.com",
         "contactPhone": "123"
       }
-    },
-    {
-      "id": "fd35",
-      "type": "Full-Time",
-      "title": "Test Job Listing",
-      "description": "desc",
-      "salary": "Under $50K",
-      "location": "location",
-      "company": {
-        "name": "company name",
-        "description": "company description",
-        "contactEmail": "22@qq.com",
-        "contactPhone": "123"
-      }
     }
   ]
 }

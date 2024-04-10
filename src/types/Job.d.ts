@@ -5,6 +5,12 @@ export type JobType = {
   description: string
   salary: string
   location: string
+  company:{
+    name: string
+    description: string
+    contactPhone: string
+    contactEmail: string
+  }
 }
 
 export type JobListingProps = {
