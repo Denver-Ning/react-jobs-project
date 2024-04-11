@@ -5,6 +5,9 @@ import { JobType } from '../types/Job';
 
 const EditJobPage = ({ updateJobSubmit }: { updateJobSubmit: Function }) => {
   const job: JobType = useLoaderData() as JobType;
+  const navigate = useNavigate();
+  const { id } = useParams();
+
   const [type, setType] = useState(job.type);
   const [title, setTitle] = useState(job.title);
   const [description, setDescription] = useState(job.description);
@@ -14,8 +17,7 @@ const EditJobPage = ({ updateJobSubmit }: { updateJobSubmit: Function }) => {
   const [company_description, setCompanyDescription] = useState(job.company.description);
   const [contact_email, setContactEmail] = useState(job.company.contactEmail);
   const [contact_phone, setContactPhone] = useState(job.company.contactPhone);
-  const navigate = useNavigate();
-  const { id } = useParams();
+
   const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const updateJob = {

@@ -24,7 +24,9 @@ const JobListings = ({ isHome = false }) => {
     } catch (err) {
       console.log('Error fetching data', err);
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      },500)
     }
   }, [])
   return (
