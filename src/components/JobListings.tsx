@@ -2,32 +2,25 @@ import { useState, useEffect } from 'react'
 import { JobType } from '../types/Job';
 import JobListing from './JobListing'
 import Spinners from './Spinners';
-
+import { fetchJobs } from '@/api/job'
 
 const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState<JobType[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const apiUrl = isHome
-    ? '/api/jobs?_limit=3'
-    : '/api/jobs';
-
+  const apiUrlLimit = isHome ? 3 : 0;
 
   useEffect(() => {
-    try {
-      const fetchJobs = async () => {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
+    fetchJobs(apiUrlLimit)
+      .then((data) => {
         setJobs(data);
-      }
-      fetchJobs();
-    } catch (err) {
-      console.log('Error fetching data', err);
-    } finally {
-      setTimeout(() => {
+      })
+      .catch((err) => {
+        console.log('Error fetching data', err);
+      })
+      .finally(() => {
         setLoading(false);
-      },500)
-    }
+      })
   }, [])
   return (
     <section className="bg-blue-50 px-4 py-10">

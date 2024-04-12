@@ -1,6 +1,6 @@
 import jsonServer from 'json-server'
 const server = jsonServer.create()
-const router = jsonServer.router('jobs.json')
+const router = jsonServer.router('jobsJson.json')
 const middlewares = jsonServer.defaults()
 server.use(middlewares)
 server.use(jsonServer.rewriter({
