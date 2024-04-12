@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "server.js"
+      "destination": "api/server.js"
     }
   ],
   "functions": {
-    "server.js": {
+    "api/server.js": {
       "memory": 1024,
       "includeFiles": "jobsJson.json"
     }
